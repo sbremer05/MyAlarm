@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		61D578932D9E398F00390626 /* AlarmDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D578922D9E398F00390626 /* AlarmDetail.swift */; };
+		61D5789D2D9E42DE00390626 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5789C2D9E42DE00390626 /* CountdownView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		61E6F3AE2D9CD17E005EDB9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61D578922D9E398F00390626 /* AlarmDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetail.swift; sourceTree = "<group>"; };
+		61D5789C2D9E42DE00390626 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		61E6F3A02D9CD17A005EDB9C /* MyAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E6F3AD2D9CD17E005EDB9C /* MyAlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E6F3B72D9CD17E005EDB9C /* MyAlarmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAlarmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +82,8 @@
 		61E6F3972D9CD17A005EDB9C = {
 			isa = PBXGroup;
 			children = (
+				61D5789C2D9E42DE00390626 /* CountdownView.swift */,
+				61D578922D9E398F00390626 /* AlarmDetail.swift */,
 				61E6F3A22D9CD17A005EDB9C /* MyAlarm */,
 				61E6F3B02D9CD17E005EDB9C /* MyAlarmTests */,
 				61E6F3BA2D9CD17E005EDB9C /* MyAlarmUITests */,
@@ -236,6 +245,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61D578932D9E398F00390626 /* AlarmDetail.swift in Sources */,
+				61D5789D2D9E42DE00390626 /* CountdownView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

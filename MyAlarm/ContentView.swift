@@ -2,23 +2,19 @@
 //  ContentView.swift
 //  MyAlarm
 //
-//  Created by Sean Bremer on 4/1/25.
+//  Created by Sean Bremer on 4/2/25.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        FilteredAlarmList()
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(Data.shared.modelContainer)
 }

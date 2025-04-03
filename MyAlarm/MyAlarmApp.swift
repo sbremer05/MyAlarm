@@ -13,5 +13,6 @@ struct MyAlarmApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Alarm.self])
     }
 }

@@ -10,7 +10,7 @@ import SwiftData
 
 struct AlarmList: View {
     @Environment(\.modelContext) private var context
-    @Query(sort: \Alarm.date) private var alarms: [Alarm]
+    @Query(sort: \Alarm.date, order: .forward) private var alarms: [Alarm]
     
     @State private var newAlarm: Alarm?
     @State private var showEmptyNameAlert = false
@@ -21,7 +21,7 @@ struct AlarmList: View {
             nameFilter.isEmpty || alarm.name.localizedStandardContains(nameFilter)
         }
         
-        _alarms = Query(filter: predicate, sort: \Alarm.name)
+        _alarms = Query(filter: predicate, sort: \Alarm.date, order: .forward)
     }
     
     var body: some View {

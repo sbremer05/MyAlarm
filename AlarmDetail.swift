@@ -51,7 +51,7 @@ struct AlarmDetail: View {
                 .padding(.vertical, 5)
             }
             
-            DatePicker("Time", selection: $alarm.date)
+            DatePicker("Time", selection: $alarm.date, in: Date()...)
         }
         .navigationTitle(isNew ? "New Alarm": "Alarm")
         .navigationBarTitleDisplayMode(.inline)

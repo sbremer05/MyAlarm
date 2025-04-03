@@ -16,6 +16,14 @@ struct AlarmDetail: View {
     
     @State private var showEmptyNameAlert = false
     
+    @State private var selectedReminders: [TimeInterval] = []
+    let reminderOptions: [(String, TimeInterval)] = [
+        ("5 minutes before", 300),
+        ("15 minutes before", 900),
+        ("30 minutes before", 1800),
+        ("1 hour before", 3600)
+    ]
+    
     init(alarm: Alarm, isNew: Bool = false) {
         self.alarm = alarm
         self.isNew = isNew
@@ -52,6 +60,26 @@ struct AlarmDetail: View {
             }
             
             DatePicker("Time", selection: $alarm.date, in: Date()...)
+            
+            Section(header: Text("Reminders")) {
+                ForEach(reminderOptions, id: \.1) { option in
+                    Button(action: {
+                        if selectedReminders.contains(option.1) {
+                            selectedReminders.removeAll { $0 == option.1 }
+                        } else {
+                            selectedReminders.append(option.1)
+                        }
+                    }) {
+                        HStack {
+                            Text(option.0)
+                            Spacer()
+                            if selectedReminders.contains(option.1) {
+                                Image(systemName: "checkmark")
+                            }
+                        }
+                    }
+                }
+            }
         }
         .navigationTitle(isNew ? "New Alarm": "Alarm")
         .navigationBarTitleDisplayMode(.inline)
@@ -93,6 +121,7 @@ struct AlarmDetail: View {
         if alarm.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             showEmptyNameAlert = true
         } else {
+            NotificationManager.shared.scheduleNotifications(for: alarm, reminders: selectedReminders)
             dismiss()
         }
     }
